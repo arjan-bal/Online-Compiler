@@ -1,0 +1,41 @@
+<nav class="navbar navbar-light bg-dark">
+  <div class="container" >
+    <a class="navbar-brand" href="/"><font color="lightgreen">Online Compiler</font></a>
+  </div>
+</nav>
+
+<br><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="form-group">
+        <label>Code</label>
+        <textarea rows="10" [(ngModel)]="code" class="form-control"></textarea>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label>Inputs</label>
+        <textarea rows="7" [(ngModel)]="inputs" class="form-control"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-success" (click)="submit()">Run</button>
+
+  <br><br>
+
+  <div *ngIf="encryptedCode">
+    <h4>Encrypted Code</h4>
+    <p style="word-wrap: break-word;">{{encryptedCode}}</p>
+  </div>
+
+  <div [class.text-danger]="isError">
+    <h4>{{title}}</h4>
+
+    <p>{{result}}</p>
+  </div>
+</div>
+
+<br><br><br>
